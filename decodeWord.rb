@@ -35,7 +35,7 @@ CODES = {
   '-.--' => 'Y',
   '--' => 'M',
   '--..' => 'Z'
-}
+}.freeze
 
 def decode_char(str)
   return CODES[str] if CODES[str]
