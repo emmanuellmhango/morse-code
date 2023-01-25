@@ -44,14 +44,14 @@ end
 def decode_word(word)
   decoded_word = ''
   words_arr = word.split
-  words_arr.each { |str| decoded_word << = decode_char(str) }
+  words_arr.each { |str| decoded_word <<= decode_char(str) }
   decoded_word
 end
 
 def decode_message(message)
   decoded_str = ''
   words = message.split('   ')
-  words.each { |word| decoded_str << = decode_word(word) + ' ' }
+  words.each { |word| decoded_str <<= decode_word(word) + ' ' }
   decoded_str
 end
 
