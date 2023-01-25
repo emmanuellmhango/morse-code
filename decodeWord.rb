@@ -1,4 +1,4 @@
-morse_codes = {
+$morse_codes = {
   '.-' => 'A',
   '-.' => 'N',
   '-----' => '0',
@@ -38,7 +38,7 @@ morse_codes = {
 }
 
 def decode_char(str)
-  morse_codes[str]
+  $morse_codes[str]
 end
 
 def decode_word(word)
@@ -51,7 +51,7 @@ end
 def decode_message(message)
   decoded_str = ''
   words = message.split('   ')
-  words.each { |word| decoded_str <<= decode_word(word) + ' ' }
+  words.each { |word| decoded_str <<= decode_word(word) << ' ' }
   decoded_str
 end
 
