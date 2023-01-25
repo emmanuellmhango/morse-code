@@ -1,4 +1,4 @@
-CODES = {
+morse_codes = {
   '.-' => 'A',
   '-.' => 'N',
   '-----' => '0',
@@ -35,25 +35,25 @@ CODES = {
   '-.--' => 'Y',
   '--' => 'M',
   '--..' => 'Z'
-}.freeze
+}
 
 def decode_char(str)
-  return CODES[str] if CODES[str]
+  morse_codes[str] if morse_codes[str]
 end
 
 def decode_word(word)
   decoded_word = ''
   words_arr = word.split
-  words_arr.each {|str| decoded_word += decode_char(str)}
-  return decoded_word
+  words_arr.each { |str| decoded_word += decode_char(str) }
+  decoded_word
 end
 
 def decode_message(message)
   decoded_str = ''
   words = message.split('   ')
-  words.each {|word| decoded_str +=decode_word(word) + ' '}
-  return decoded_str
+  words.each { |word| decoded_str += decode_word(word) + ' ' }
+  decoded_str
 end
 
-word = decode_message(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+word = decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
 puts word
